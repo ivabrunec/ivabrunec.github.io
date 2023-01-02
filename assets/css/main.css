@@ -2433,7 +2433,7 @@ input, select, textarea {
 		height: calc(2em + 6px);
 		line-height: 2em;
 		width: 10em;
-		margin: 0 0.5	em 0 .5em;
+		margin: 0 0.5em 0 0.5em;
 		display: block;
 		padding: 0 0;
 		text-align: center;
@@ -2607,7 +2607,7 @@ input, select, textarea {
 		}
 		
 			#header .icons a {
-				color: rgba(220, 220, 220, 0.8);
+				color: #e1e1e1;
 				font-size: 0.8em;
 			}
 
