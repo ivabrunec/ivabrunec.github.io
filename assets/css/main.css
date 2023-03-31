@@ -2959,7 +2959,7 @@ input, select, textarea {
 
 /* XLarge */
 
-	@media screen and (max-width: 1800px) {
+	@media screen and (max-width: 2000px) {
 
 		/* Basic */
 
@@ -2968,7 +2968,6 @@ input, select, textarea {
 			}
 			#header {
 				padding: 6em 3em 3em 3em;
-				width: 30%;
 			}
 	}
 
