@@ -2959,7 +2959,11 @@ input, select, textarea {
 
 /* XLarge */
 
-	@media screen and (max-width: 2000px) {
+	@media screen and (max-width > 1800px) {
+
+		html{
+			zoom:25%;
+		}
 
 		/* Basic */
 
