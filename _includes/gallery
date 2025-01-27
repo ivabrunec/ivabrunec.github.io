@@ -1,0 +1,53 @@
+{% if include.id %}
+  {% assign gallery = page[include.id] %}
+{% else %}
+  {% assign gallery = page.gallery %}
+{% endif %}
+
+{% if include.layout %}
+  {% assign gallery_layout = include.layout %}
+{% else %}
+  {% if gallery.size == 2 %}
+    {% assign gallery_layout = 'half' %}
+  {% elsif gallery.size >= 3 %}
+    {% assign gallery_layout = 'third' %}
+  {% else %}
+    {% assign gallery_layout = '' %}
+  {% endif %}
+{% endif %}
+
+<div id="filter-buttons">
+  <button data-filter="all">All</button>
+  {% assign all_tags = "" %}
+  {% for img in gallery %}
+    {% for tag in img.tags %}
+      {% assign all_tags = all_tags | append: tag | append: ',' %}
+    {% endfor %}
+  {% endfor %}
+  {% assign unique_tags = all_tags | split: ',' | uniq | sort %}
+  {% for tag in unique_tags %}
+    {% if tag != "" %}
+      <button data-filter="{{ tag | strip }}">{{ tag | capitalize }}</button>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<figure class="{{ gallery_layout }} {{ include.class }}">
+  {% for img in gallery %}
+    {% if img.url %}
+      <a href="{{ img.url | relative_url }}"
+        data-tags="{{ img.tags | join: ',' }}" 
+        {% if img.title %}title="{{ img.title }}"{% endif %}>
+          <img src="{{ img.image_path | relative_url }}"
+               alt="{% if img.alt %}{{ img.alt }}{% endif %}">
+      </a>
+    {% else %}
+      <img src="{{ img.image_path | relative_url }}"
+           data-tags="{{ img.tags | join: ',' }}"
+           alt="{% if img.alt %}{{ img.alt }}{% endif %}">
+    {% endif %}
+  {% endfor %}
+  {% if include.caption %}
+    <figcaption>{{ include.caption | markdownify | remove: "<p>" | remove: "</p>" }}</figcaption>
+  {% endif %}
+</figure>

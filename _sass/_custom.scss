@@ -1,0 +1,55 @@
+// .data-point {
+//     background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black */
+//     border-radius: 50%; /* Circular */
+//     width: 4px; /* Tiny size */
+//     height: 4px;
+//     pointer-events: none; /* Ensure points don't interfere with scrolling or interaction */
+//   }
+
+/* Darken the image slightly when hovered */
+.image-darken {
+  transition: filter 0.3s ease-in-out; /* Smooth transition */
+  filter: brightness(0.8); /* Darken the image slightly */
+}
+
+/* Filter Buttons Styling */
+/* ==========================================================================
+   BUTTONS (Filtered Gallery)
+   ========================================================================== */
+
+   #filter-buttons button {
+    display: inline-block;
+    margin-bottom: 0.25em;
+    padding: 0.5em 1em;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-width: 0;
+    border-radius: $border-radius;
+    cursor: pointer;
+    background-color: $muted-text-color; /* Adjust this to your button color */
+    color: #fff;
+  
+    /* Hover state */
+    &:hover {
+      background-color: mix($border-color, $muted-text-color, 20%); /* Darkens the button color on hover */
+    }
+  
+    /* Active state */
+    &:active {
+      background-color: mix($primary-color, #000, 30%);
+      border-color: none;
+    }
+  }
+  
+  #filter-buttons button[data-filter="all"] {
+    background-color: $muted-text-color; /* Customize for 'Show All' button */
+    color: #fff;
+  
+    &:hover {
+      background-color: mix($border-color, $muted-text-color, 20%);
+    }
+  }
+  
