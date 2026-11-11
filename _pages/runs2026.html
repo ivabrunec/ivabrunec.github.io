@@ -1,0 +1,49 @@
+---
+layout: null
+permalink: /runs2026/
+title: "Every Run, 2026"
+sitemap: true
+---
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Every Run, 2026 · {{ site.title }}</title>
+  <meta name="description" content="Every run of a year of marathon training in Toronto, from a grid of squiggles to a tower to the map.">
+  <meta property="og:title" content="Every Run, 2026">
+  <meta property="og:description" content="A year of marathon training in Toronto, one route at a time.">
+  <meta name="theme-color" content="#f0efe9">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/runs2026/runs2026.css' | relative_url }}">
+</head>
+<body>
+  <canvas id="stage" aria-hidden="true"></canvas>
+
+  <header class="intro">
+    <p class="intro-title">every run</p>
+    <p class="intro-line"><span id="intro-count">loading routes</span> <span class="intro-hint">scroll<span class="cursor" aria-hidden="true"></span></span></p>
+  </header>
+
+  <aside class="hud" id="hud" aria-live="off">
+    <p class="hud-title">every run</p>
+    <pre class="hud-body" id="hud-body"></pre>
+    <div class="hud-final" id="hud-final" hidden>
+      <p class="hud-km" id="hud-km"></p>
+    </div>
+  </aside>
+
+  <nav class="corner">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">dark</button>
+    <a class="home" href="{{ '/' | relative_url }}">ivabrunec.github.io</a>
+  </nav>
+
+  <div id="track"></div>
+
+  <noscript><p class="noscript">This piece draws with JavaScript. Turn it on to see every run.</p></noscript>
+
+  <script src="{{ '/assets/runs2026/runs2026.js' | relative_url }}" data-src="{{ '/assets/runs2026/data.json' | relative_url }}" defer></script>
+</body>
+</html>
