@@ -404,7 +404,7 @@
     .then(res => { if (!res.ok) throw new Error(res.status); return res.json(); })
     .then(data => {
       prepare(data);
-      introCount.textContent = `${N} runs through toronto, ${words(data.meta.first)} to ${words(data.meta.last)}`;
+      introCount.textContent = `my runs, ${words(data.meta.first)} to ${words(data.meta.last)}`;
       hudKm.textContent = `${data.meta.training_km.toFixed(1)}km`;
       layout();
       frame();
