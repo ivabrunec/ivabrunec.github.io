@@ -1,16 +1,16 @@
 :root {
-  --bg: #efe8eb;
-  --ink: #111111;
-  --ink-dim: #7c7c7c;
-  --accent: #cf5c36;
+  --bg: #f0efe9;
+  --ink: #2a2d33;
+  --ink-dim: #858a94;
+  --accent: #a62e26;
   --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 :root[data-theme="dark"] {
-  --bg: #0b0b0b;
-  --ink: #eee5e9;
-  --ink-dim: #7c7c7c;
-  --accent: #efc88b;
+  --bg: #0e0f12;
+  --ink: #d9d4c8;
+  --ink-dim: #7a776f;
+  --accent: #d64e3e;
 }
 
 * { box-sizing: border-box; }

@@ -16,14 +16,12 @@
 
   const THEMES = {
     light: {
-      bg: '#efe8eb', trace: '207,92,54', race: '17,17,17', road: '60,60,60', lake: '176,128,60', label: '124,124,124',
-      wall: '232,176,96', raceWall: '17,17,17',
-      wallFill: 0.34, raceFill: 0.14, mapLine: 0.5, roadA: 0.14, streetA: 0.07, lakeA: 0.6,
+      bg: '#f0efe9', trace: '166,46,38', race: '112,120,132', road: '60,64,72', lake: '58,90,128', label: '118,123,133',
+      wallFill: 0.16, raceFill: 0.24, mapLine: 0.42, roadA: 0.15, streetA: 0.075, lakeA: 0.5,
     },
     dark: {
-      bg: '#0b0b0b', trace: '216,104,66', race: '239,200,139', road: '150,150,150', lake: '238,229,233', label: '124,124,124',
-      wall: '216,104,66', raceWall: '239,200,139',
-      wallFill: 0.2, raceFill: 0.3, mapLine: 0.5, roadA: 0.16, streetA: 0.075, lakeA: 0.32,
+      bg: '#0e0f12', trace: '214,78,62', race: '196,201,208', road: '160,164,172', lake: '140,164,190', label: '140,137,129',
+      wallFill: 0.2, raceFill: 0.3, mapLine: 0.46, roadA: 0.16, streetA: 0.075, lakeA: 0.42,
     },
   };
   let theme = THEMES.light;
@@ -233,7 +231,7 @@
   function drawItem(it) {
     const r = it.r, rgb = r.m ? theme.race : theme.trace, land = it.land;
     if (it.wall) {
-      ctx.fillStyle = `rgba(${r.m ? theme.raceWall : theme.wall},${(r.m ? theme.raceFill : theme.wallFill) * (1 - land)})`;
+      ctx.fillStyle = `rgba(${rgb},${(r.m ? theme.raceFill : theme.wallFill) * (1 - land)})`;
       fillWall(r.b, r.tp, r.n);
       ctx.strokeStyle = `rgba(${rgb},${0.28 * (1 - land)})`;
       ctx.lineWidth = 0.7;
